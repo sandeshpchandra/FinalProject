@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="col-sm-16 col-xl-12" >
+                        <div class="bg-light rounded h-100 p-4" >
+                            <h6 class="mb-4">Add Employee</h6>
+                            <form method="post" action="{% url 'saveproperty' %}" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control"  name="pname">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Price</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputPassword3" name="price">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >Employee</label>
+                                    <div class="col-sm-10">
+
+                                        <select class="form-control" name="eemployee">
+                                            <option>select employee</option>
+                                            {% for i in data %}
+                                            <option>{{i.ename}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    </div>
+                                 </div>
+                                  <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" > Property Type</label>
+                                    <div class="col-sm-10">
+
+                                        <select class="form-control" name="ptype">
+                                            <option>select Property Type</option>
+                                            {% for i in data1 %}
+                                            <option>{{i.ptname}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    </div>
+                                 </div>
+                                  <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >Property Area</label>
+                                    <div class="col-sm-10">
+
+                                        <select class="form-control" name="parea">
+                                            <option>select Property Area</option>
+                                            {% for i in data2 %}
+                                            <option>{{i.paname}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    </div>
+                                 </div>
+                                  <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >Sell Type</label>
+                                    <div class="col-sm-10">
+
+                                        <select class="form-control" name="stype">
+                                            <option>select Sell Type</option>
+                                            {% for i in data3 %}
+                                            <option>{{i.slname}}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    </div>
+                                 </div>
+
+                                <div class="row mb-3">
+
+                                </div>
+                                 <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >Discription</label>
+                                    <div class="col-sm-10">
+<!--                                        <input type="email" class="form-control" id="inputEmail3">-->
+                                        <textarea class="form-control" id="inputEmail3" name="pdiscription"></textarea>
+                                    </div>
+
+
+                                </div>
+                                    <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >Address</label>
+                                    <div class="col-sm-10">
+<!--                                        <input type="email" class="form-control" id="inputEmail3">-->
+                                        <textarea class="form-control" id="inputEmail3" name="paddress"></textarea>
+                                    </div>
+
+
+                                </div>
+                                 <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >proom</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail3" name="proom">
+                                    </div>
+                                 </div>
+                                  <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >ptoilet</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail3" name="ptoilet">
+                                    </div>
+                                 </div>
+                                  <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >square feet</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail3" name="squarfeet">
+                                    </div>
+                                  </div>
+
+
+                                  <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >Images</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" class="form-control"  name="pimage">
+                                    </div>
+                                 </div>
+                                        <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" ></label>
+                                    <div class="col-sm-10">
+                                        <input type="file" class="form-control"  name="pimage1">
+                                    </div>
+                                 </div>
+                                        <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" ></label>
+                                    <div class="col-sm-10">
+                                        <input type="file" class="form-control"  name="pimage2">
+                                    </div>
+                                 </div>
+
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >employee email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail3" name="peemail">
+                                    </div>
+                                  </div>
+
+                               <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >employee department</label>
+                                    <div class="col-sm-10">
+
+                                        <select class="form-control" name="pdepartment">
+                                            <option>select department</option>
+                                           {% for i in data5 %}
+                                            <option>
+                                            {{i.dname}}
+
+                                            </option>
+                                            {% endfor %}
+
+                                        </select>
+                                    </div>
+                                 </div>
+
+                                 <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >Employee Discription</label>
+                                    <div class="col-sm-10">
+<!--                                        <input type="email" class="form-control" id="inputEmail3">-->
+                                        <textarea class="form-control" id="inputEmail3" name="pediscription"></textarea>
+                                    </div>
+
+                                            <div class="row mb-3" style="margin-top:20px;">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label" > employee image</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" class="form-control"  name="eimage">
+                                    </div>
+                                 </div>
+
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </form>
+                        </div>
+                    </div>
+</body>
+</html>
+{% endblock %}

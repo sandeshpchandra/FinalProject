@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Hoverable Table</h6>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                       <th scope="col">Name</th>
+                                        <th scope="col">Head</th>
+                                        <th scope="col">Time</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     {% for i in data %}
+                                    <tr>
+
+                                        <td>{{i.dname}}</td>
+                                        <td>{{i.dhead}}</td>
+                                        <td>j{{i.dtime}}</td>
+                                        <td> <form action="{% url 'editdepartment' dataid=i.id %}">
+                                            <button  class="btn btn-outline-success " >Edit</button>
+                                        </form>
+                                        </td>
+
+                                        <td>
+                                            <form action="{% url 'deletedepartment' dataid=i.id %}">
+                                                <button class="btn btn-outline-danger " >Delete</button>
+                                            </form>
+                                        </td>
+
+                                    </tr>
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+
+</body>
+</html>
+{% endblock %}

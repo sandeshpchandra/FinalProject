@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="col-sm-12 col-xl-6" style="width:600px">
+                        <div class="bg-light rounded h-100 p-4" >
+                            <h6 class="mb-4">Add Department</h6>
+                            <form method="post" action="{% url 'updatepropertytype' dataid=data.id %}">
+                                {% csrf_token %}
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail3" name="ptname" value="{{data.ptname}}">
+                                    </div>
+                                </div>
+<!--                                <div class="row mb-3">-->
+<!--                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Head</label>-->
+<!--                                    <div class="col-sm-10">-->
+<!--                                        <input type="text" class="form-control" id="inputPassword3" name="dhead" value="{{data.dhead}}">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                  <div class="row mb-3">-->
+<!--                                    <label for="inputPassword3" class="col-sm-2 col-form-label" >Time</label>-->
+<!--                                    <div class="col-sm-10">-->
+<!--                                        <input type="text" class="form-control" id="inputPassword3" name="dtime" value="{{data.dtime}}">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <fieldset class="row mb-3">-->
+<!--                                    <legend class="col-form-label col-sm-2 pt-0">Gender</legend>-->
+<!--                                    <div class="col-sm-10">-->
+<!--                                        <div class="form-check">-->
+<!--                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked="">-->
+<!--                                            <label class="form-check-label" for="gridRadios1">-->
+<!--                                                Male-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                        <div class="form-check">-->
+<!--                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">-->
+<!--                                            <label class="form-check-label" for="gridRadios2">-->
+<!--                                                Female-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                          <div class="form-check">-->
+<!--                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">-->
+<!--                                            <label class="form-check-label" for="gridRadios2">-->
+<!--                                                Other-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+
+<!--                                    </div>-->
+<!--                                </fieldset>-->
+<!--                                 <div class="row mb-3">-->
+<!--                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >Department</label>-->
+<!--                                    <div class="col-sm-10">-->
+<!--                                        <input type="text" class="form-control" id="inputEmail3">-->
+<!--                                    </div>-->
+
+<!--                                </div>-->
+<!--                                <div class="row mb-3">-->
+
+<!--                                </div>-->
+<!--                                 <div class="row mb-3">-->
+<!--                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >Discription</label>-->
+<!--                                    <div class="col-sm-10">-->
+<!--&lt;!&ndash;                                        <input type="email" class="form-control" id="inputEmail3">&ndash;&gt;-->
+<!--                                        <textarea class="form-control" id="inputEmail3"></textarea>-->
+<!--                                    </div>-->
+
+
+<!--                                </div>-->
+<!--                                 <div class="row mb-3">-->
+<!--                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >Whatsapp Number</label>-->
+<!--                                    <div class="col-sm-10">-->
+<!--                                        <input type="text" class="form-control" id="inputEmail3">-->
+<!--                                    </div>-->
+<!--                                 </div>-->
+<!--                                  <div class="row mb-3">-->
+<!--                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >email</label>-->
+<!--                                    <div class="col-sm-10">-->
+<!--                                        <input type="email" class="form-control" id="inputEmail3">-->
+<!--                                    </div>-->
+<!--                                 </div>-->
+<!--                                  <div class="row mb-3">-->
+<!--                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >Phone Number</label>-->
+<!--                                    <div class="col-sm-10">-->
+<!--                                        <input type="text" class="form-control" id="inputEmail3">-->
+<!--                                    </div>-->
+<!--                                        <div class="row mb-3">-->
+<!--                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >Nationality</label>-->
+<!--                                    <div class="col-sm-10">-->
+<!--                                        <input type="text" class="form-control" id="inputEmail3">-->
+<!--                                    </div>-->
+<!--                                 </div>-->
+<!--                                 </div>-->
+<!--                                  <div class="row mb-3">-->
+<!--                                    <label for="inputEmail3" class="col-sm-2 col-form-label" >photo</label>-->
+<!--                                    <div class="col-sm-10">-->
+<!--                                        <input type="file" class="form-control" id="inputEmail3">-->
+<!--                                    </div>-->
+<!--                                 </div>-->
+
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </form>
+                        </div>
+                    </div>
+</body>
+</html>
+{% endblock %}
